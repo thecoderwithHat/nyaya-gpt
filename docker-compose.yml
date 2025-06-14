@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: nyaya_gpt_app
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"  # Adjust if you're running a FastAPI/Flask app
+    environment:
+      - ENV=production
+    command: python app.py
